@@ -154,3 +154,6 @@ words.each{|words| frequencies[words] += 1} #for each word, store in hash and in
 frequencies = frequencies.sort_by{|k,v| v} #sort frequency by increment value
 
 frequencies.reverse! #reverse the sort
+
+frequencies.each{|k,v| puts "#{k} #{v}"} #print the hash
+
