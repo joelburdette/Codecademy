@@ -1,0 +1,107 @@
+#Data types
+my_num = 25    # Add your code here!
+
+my_boolean = true     # And here!
+
+my_string = "Ruby" # Also here.
+
+num2 = (234098 ** 23)
+
+#Strings
+print "Oxnard Montalvo".reverse #reverses string
+
+puts "what's up" #puts adds new line after print
+
+"joel".length
+# ==> 15
+
+puts "Joel".upcase
+puts "Joel".downcase
+
+#comments
+=begin
+asdkjsd
+=end
+#sdklsdf
+
+#formatting
+print "What's your first name?"
+first_name = gets.chomp #Ruby automatically adds a blank line (or newline) after each bit of input; chomp removes that extra line.
+first_name.capitalize! #! permanently changes first_name's value to capitalize, not just this instance.
+
+print "What's your last name?"
+last_name = gets.chomp
+last_name.capitalize!
+
+print "What city are you from?"
+city = gets.chomp
+city.capitalize!
+
+print "What state or province are you from?"
+state = gets.chomp
+state.upcase! 
+
+puts "Your name is #{first_name} #{last_name} and you're from #{city}, #{state}!"
+
+#control flow
+print "Integer please: "
+user_num = Integer(gets.chomp)
+puts user_num
+if user_num < 0
+  puts "You picked a negative integer!"
+elsif user_num > 0
+  puts "You picked a positive integer!"
+else
+  puts "You picked zero!"
+end
+
+#if
+puts"What is your name?"
+name = gets.chomp
+len = name.length
+
+if len > 7
+    puts "you have a long name!"
+elsif len == 4
+    puts "your name is Joel!"
+else
+    puts "nice to meet you #{name}"
+end
+
+#unless
+
+hungry = false
+
+unless hungry
+  puts "I'm writing Ruby programs!"
+else
+  puts "Time to eat!"
+end
+
+#comparisons
+is_true = 2 != 3
+
+is_false = 2 == 3
+
+test_1 = 17 > 16
+
+test_2 = 21 <= 30
+
+test_3 = 9 >= 9
+
+test_4 = -11 < 4
+
+boolean_2 = !true && (!true || 100 != 5**2)
+
+#Thith Meanth War!
+print "Thtring, pleathe!: "
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s" #does it include s?
+  user_input.gsub!(/s/, "th") #gsub finds all s and replaces with th
+else
+  puts "Nothing to do here!"
+end
+  
+puts "Your string is: #{user_input}"
