@@ -140,3 +140,17 @@ secret_identities = {
 lunch_order.each do |key,value|
     puts "#{value}"
 end
+
+#Sorting a hash
+puts "Yo, gimme dat input"
+text = gets.chomp #gets user input
+
+words = text.split(" ") #makes input an array
+
+frequencies = Hash.new(0) #create new freq hash
+
+words.each{|words| frequencies[words] += 1} #for each word, store in hash and increment freq value by 1
+
+frequencies = frequencies.sort_by{|k,v| v} #sort frequency by increment value
+
+frequencies.reverse! #reverse the sort
