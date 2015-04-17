@@ -115,4 +115,29 @@ book_1 = "A Wrinkle in Time"
 
 book_2 = "A Brief History of Time"
 
-return book_1 <=> book_2
+book_1 <=> book_2
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+books.sort! { |firstBook, secondBook| secondBook <=> firstBook }
+
+#Ordering your library
+
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["Heart of Darkness", "Code Complete", "The Lorax", "The Prophet", "Absalom, Absalom!"]
+
+puts "A-Z: #{alphabetize(books)}"
+puts "Z-A: #{alphabetize(books, true)}"
+
+
