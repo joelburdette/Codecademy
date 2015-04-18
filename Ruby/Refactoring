@@ -1,0 +1,178 @@
+#close to english
+ruby_is_eloquent = true
+ruby_is_ugly = false
+
+puts "Ruby is eloquent!" if ruby_is_eloquent
+puts "Ruby's not ugly!" unless ruby_is_ugly
+
+#one line if statement
+
+#do this
+puts "it's true!" if true
+
+#not this
+if true puts "it's true!"
+
+#one line unless
+puts "it's true!" unless false
+
+# Ternary
+#boolean ? Do this if true: Do this if false
+
+puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
+
+#Case, when and then
+case language
+when "JS"
+  puts "Websites!"
+when "Python"
+  puts "Science!"
+when "Ruby"
+  puts "Web apps!"
+else
+  puts "I don't know!"
+end
+#shorter then
+case language
+  when "JS" then puts "Websites!"
+  when "Python" then puts "Science!"
+  when "Ruby" then puts "Web apps!"
+  else puts "I don't know!"
+end
+
+#my case
+puts "Hello there!"
+greeting = gets.chomp
+
+case greeting
+    when "English" then puts "Hello!"
+    when "French"  then puts "Bonjour!"
+    when "German"  then puts "Guten Tag!"
+    when "Finnish"  then puts "Haloo!"
+    else puts "Lo siento, no comprende"
+end
+#conditional assignment operator, only assigns if variable is nil
+favorite_book = nil
+puts favorite_book
+
+favorite_book ||= "Cat's Cradle"
+puts favorite_book
+
+favorite_book ||= "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+
+favorite_book = "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+
+#return not needed, ruby methods default returns last evaluated expression
+def multiple_of_three(n)
+  n % 3 == 0 ? "True" : "False"
+end
+
+#boolean operators
+def a
+  puts "A was evaluated!"
+  return true
+end
+
+def b
+  puts "B was also evaluated!"
+  return true
+end
+
+puts a || b
+puts "------"
+puts a && b
+multiple_of_three(9)
+
+#yeah!
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+my_array.each{|x| puts x if x % 2 == 0}
+
+#for loop alternative
+
+"L".upto("P") {|letter| puts letter}
+
+1.upto(10) {|num| puts num}
+
+#variable.respond_to?(symbol that it responds to)
+
+age = 26
+
+# Add your code below!
+age.respond_to?(:next)
+
+#concatenation
+alphabet = ["a", "b", "c"]
+alphabet << "d"
+
+caption = "A giraffe surrounded by "
+caption << "weezards!"
+
+#ruby way of inserting variables into strings
+favorite_things = ["Ruby", "espresso", "candy"]
+
+puts "A few of my favorite things: #{favorite_things}"
+
+favorite_things.each do |thing|
+  puts "I love #{thing}!"
+end
+
+#refactoring code
+$VERBOSE = nil    # We'll explain this at the end of the lesson.
+require 'prime'   # This is a module. We'll cover these soon!
+
+def first_n_primes(n)
+
+  unless n.is_a? Integer
+    return "n must be an integer."
+  end
+
+  if n <= 0
+    return "n must be greater than 0."
+  end
+  
+  prime_array = [] if prime_array.nil?
+  
+  prime = Prime.new
+  for num in (1..n)
+    prime_array.push(prime.next)
+  end
+  return prime_array
+end
+
+first_n_primes(10)
+#refactored
+$VERBOSE = nil    # We'll explain this at the end of the lesson.
+require 'prime'   # This is a module. We'll cover these soon!
+
+def first_n_primes(n)
+
+  puts "n must be an integer." unless n.is_a? Integer
+    
+
+  puts "n must be greater than 0." if n <= 0
+  
+  prime_array ||= []
+  
+  prime = Prime.new
+  n.times {prime_array << prime.next}
+end
+
+first_n_primes(10)
+
+#Ruby 1.9
+require 'prime'
+
+def first_n_primes(n)
+  # Check for correct input!
+  "n must be an integer" unless n.is_a? Integer
+  "n must be greater than 0" if n <= 0
+
+  # The Ruby 1.9 Prime class makes the array automatically!
+  prime = Prime.instance
+  prime.first n
+end
+
+first_n_primes(10)
