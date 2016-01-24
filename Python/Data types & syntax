@@ -1,0 +1,42 @@
+# print function
+print "Welcome to Python!"
+
+#variables
+spam = 5
+my_variable = 10
+string = "hello!"
+string2 = 'hello!'
+print string
+print string2
+my_int = 7
+my_float = 1.23
+my_bool = True
+
+#whitespace, make it uniform in blocks
+def spam():
+ eggs = 12
+ return eggs
+        
+print spam()
+
+"""mutli
+line
+comment"""
+
+#operations
+a + b
+b - c
+c * d
+d / e
+e ** f
+f % g
+
+#tip calculator
+meal = 44.50
+tax = 0.0675
+tip = 0.15
+
+meal = meal + meal * tax
+
+total = meal + meal * tip
+print("%.2f" % total)
